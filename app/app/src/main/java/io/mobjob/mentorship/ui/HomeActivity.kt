@@ -1,7 +1,9 @@
 package io.mobjob.mentorship.ui
 
+import android.content.Intent
 import android.content.res.Resources
 import android.os.Bundle
+import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
@@ -9,6 +11,7 @@ import io.mobjob.mentorship.R
 
 private const val USERNAME = "username"
 private const val PASSWORD = "password"
+
 
 class HomeActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -32,6 +35,10 @@ class HomeActivity : AppCompatActivity() {
         backButton.setOnClickListener {
             // Trigger the back button click
             onBackPressed()
+        }
+
+        findViewById<Button>(R.id.goto_new_activity).setOnClickListener {
+            startActivity(Intent(this@HomeActivity, NewActivity::class.java))
         }
     }
 }

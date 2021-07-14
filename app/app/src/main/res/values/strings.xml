@@ -10,4 +10,7 @@
     <string name="label_username">Username: %s</string>
     <string name="label_password">Password: %s</string>
     <string name="no_username_or_password_toast">Username or password field is empty</string>
+    <string name="goto_detail_fragment_string">Go to <b>Details</b> fragment</string>
+    <string name="goto_home_fragment_string">Go to <b>Home</b> fragment</string>
+    <string name="goto_new_activity">Go to new activity</string>
 </resources>
