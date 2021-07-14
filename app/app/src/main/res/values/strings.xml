@@ -1,3 +1,13 @@
 <resources>
-    <string name="app_name">Mentorship</string>
+    <string name="app_name">00</string>
+    <string name="title">Android Mentorship \nProgram</string>
+    <string name="contBtn">Log in</string>
+    <string name="imgDesc">Middle image</string>
+    <string name="enter_username_text">Enter your username</string>
+    <string name="enter_password_text">Enter your password</string>
+    <string name="back_button_content_description">Back buttot</string>
+    <string name="home_activity_title">Home</string>
+    <string name="label_username">Username: %s</string>
+    <string name="label_password">Password: %s</string>
+    <string name="no_username_or_password_toast">Username or password field is empty</string>
 </resources>
