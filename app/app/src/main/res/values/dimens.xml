@@ -31,4 +31,12 @@
     <dimen name="home_text_view_text_size">18sp</dimen>
     <dimen name="home_constraint_horizontal_bias">0.0</dimen>
     <dimen name="home_constraint_vertical_bias">0.521</dimen>
+    <dimen name="goto_new_activity_button_height">50dp</dimen>
+    <dimen name="goto_new_activity_button_margin_bottom">68dp</dimen>
+
+    <!--Fragment -->
+    <dimen name="fragment_navigation_button_layout_height">43dp</dimen>
+    <dimen name="fragment_navigation_button_margin_top">344dp</dimen>
+    <dimen name="fragment_navigation_button_layout_constraintHorizontal_bias">0.496</dimen>
+    <dimen name="fragment_navigation_button_padding">35dp</dimen>
 </resources>
