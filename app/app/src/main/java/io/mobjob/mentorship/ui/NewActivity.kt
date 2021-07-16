@@ -11,19 +11,34 @@ class NewActivity : AppCompatActivity(R.layout.activity_new) {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         if (savedInstanceState == null) {
-            supportFragmentManager.beginTransaction()
-                .add(R.id.new_activity_fragment_container_view, HomeFragment.newInstance()).commit()
+            supportFragmentManager
+                .beginTransaction()
+                .add(R.id.new_activity_fragment_container_view, HomeFragment.newInstance())
+                .commit()
         }
 
         // Our variable change observer to toggle our fragment
-        viewModel.fragmentStatus.observe(this, Observer { fragmentStatus ->
-            if (fragmentStatus == true) {
-                supportFragmentManager.beginTransaction()
-                    .add(R.id.new_activity_fragment_container_view, HomeFragment.newInstance()).commit()
-            } else {
-                supportFragmentManager.beginTransaction()
-                    .add(R.id.new_activity_fragment_container_view, DetailsFragment.newInstance()).commit()
-            }
-        })
+//        viewModel.fragmentStatus.observe(this, Observer { fragmentStatus ->
+//            if (fragmentStatus == true) {
+//                supportFragmentManager.beginTransaction()
+//                    .add(R.id.new_activity_fragment_container_view, HomeFragment.newInstance()).commit()
+//            } else {
+//
+//            }
+//        })
+    }
+
+    fun showHomeFragment() {
+        supportFragmentManager
+            .beginTransaction()
+            .replace(R.id.new_activity_fragment_container_view, HomeFragment.newInstance())
+            .commit()
+    }
+
+    fun showDetailsFragment() {
+        supportFragmentManager
+            .beginTransaction()
+            .replace(R.id.new_activity_fragment_container_view, DetailsFragment.newInstance())
+            .commit()
     }
 }
