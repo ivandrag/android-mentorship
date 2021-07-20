@@ -10,13 +10,7 @@ import androidx.navigation.Navigation
 import io.mobjob.mentorship.R
 import io.mobjob.mentorship.databinding.FragmentDetailsBinding
 
-class DetailsFragment : Fragment(R.layout.fragment_home) {
-
-    companion object {
-        fun newInstance(): DetailsFragment {
-            return DetailsFragment()
-        }
-    }
+class DetailsFragment : Fragment() {
 
     private var _binding: FragmentDetailsBinding? = null
     private val binding get() = _binding!!

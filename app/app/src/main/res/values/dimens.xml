@@ -2,13 +2,14 @@
 <resources>
     <!-- Main Activity -->
     <dimen name="main_activity_title_text_padding">30dp</dimen>
-
+    <dimen name="tool_bar_image_layout_width">38dp</dimen>
+    <dimen name="tool_bar_image_min_max_width">10dp</dimen>
+    <dimen name="tool_bar_title_margin_start">8dp</dimen>
     <!--Fragment -->
     <dimen name="fragment_navigation_button_layout_height">43dp</dimen>
     <dimen name="fragment_navigation_button_margin_bottom">24dp</dimen>
     <dimen name="fragment_navigation_button_layout_constraintHorizontal_bias">0.496</dimen>
     <dimen name="fragment_navigation_button_padding">35dp</dimen>
-
     <dimen name="fragment_title_margin_top">32dp</dimen>
     <dimen name="fragment_title_text_size">34sp</dimen>
     <dimen name="fragment_image_width">279dp</dimen>

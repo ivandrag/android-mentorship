@@ -10,7 +10,7 @@ import androidx.navigation.Navigation
 import io.mobjob.mentorship.R
 import io.mobjob.mentorship.databinding.FragmentHomeBinding
 
-class HomeFragment : Fragment(R.layout.fragment_home) {
+class HomeFragment : Fragment() {
 
     companion object {
         fun newInstance(): HomeFragment {
