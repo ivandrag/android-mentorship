@@ -12,16 +12,8 @@ import io.mobjob.mentorship.databinding.FragmentHomeBinding
 
 class HomeFragment : Fragment() {
 
-    companion object {
-        fun newInstance(): HomeFragment {
-            return HomeFragment()
-        }
-    }
-
     private var _binding: FragmentHomeBinding? = null
     private val binding get() = _binding!!
-
-
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         println("[SPCL_TAG] : " + "onCreateView")
@@ -31,13 +23,10 @@ class HomeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val navController : NavController = Navigation.findNavController(view)
-        goToFragmentDetails(navController)
+        goToFragmentDetails(Navigation.findNavController(view))
         println("[SPCL_TAG] : " + "onViewCreated")
-
     }
     private fun goToFragmentDetails(navController : NavController) {
-
         binding.gotoDetailsFragmentButton.setOnClickListener {
             navController.navigate(R.id.action_homeFragment_to_detailsFragment)
         }
@@ -50,6 +39,7 @@ class HomeFragment : Fragment() {
 
     override fun onViewStateRestored(savedInstanceState: Bundle?) {
         super.onViewStateRestored(savedInstanceState)
+        println("[SPCL_TAG] : " + "onViewStateRestored")
     }
 
     override fun onStart() {
@@ -80,7 +70,6 @@ class HomeFragment : Fragment() {
     override fun onDestroyView() {
         super.onDestroyView()
         println("[SPCL_TAG] : " + "onDestroyView")
-
     }
 
     override fun onDestroy() {
