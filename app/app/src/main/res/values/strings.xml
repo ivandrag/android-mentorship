@@ -5,7 +5,7 @@
     <string name="imgDesc">Middle image</string>
     <string name="enter_username_text">Enter your username</string>
     <string name="enter_password_text">Enter your password</string>
-    <string name="back_button_content_description">Back buttot</string>
+    <string name="back_button_content_description">Back button</string>
     <string name="home_activity_title">Home</string>
     <string name="label_username">Username: %s</string>
     <string name="label_password">Password: %s</string>
@@ -13,4 +13,8 @@
     <string name="goto_detail_fragment_string">Go to <b>Details</b> fragment</string>
     <string name="goto_home_fragment_string">Go to <b>Home</b> fragment</string>
     <string name="goto_new_activity">Go to new activity</string>
+    <string name="main_activity_containing_2_fragments">Main Activity containing 2 <b>fragments</b></string>
+    <string name="an_image_describing_the_page">An image describing the page</string>
+    <string name="details_page">Details Fragment</string>
+    <string name="home_page">Home Fragment</string>
 </resources>
