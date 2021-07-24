@@ -22,8 +22,7 @@ class DetailsFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val navController : NavController = Navigation.findNavController(view)
-        goToHomeFragment(navController)
+        goToHomeFragment(Navigation.findNavController(view))
     }
 
     private fun goToHomeFragment(navController : NavController) {
