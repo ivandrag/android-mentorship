@@ -6,70 +6,56 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.MainActivity">
-    <TextView
-        android:id="@+id/title_text_view"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/login_title_text_margin"
-        android:text="@string/title"
-        android:textAlignment="center"
-        android:textColor="@color/black"
-        android:textSize="@dimen/login_title_text_size"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/details_fragment_tool_bar"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-    <EditText
-        android:id="@+id/username_edit_text"
-        android:layout_width="@dimen/login_input_width"
-        android:layout_height="@dimen/login_input_height"
-        android:layout_marginTop="@dimen/login_input_margin_top"
-        android:background="@drawable/text_edit_border"
-        android:textColor="@color/general_tint"
-        android:textColorHint="@color/general_tint"
-        android:paddingLeft="@dimen/login_input_padding"
-        android:paddingRight="@dimen/login_input_padding"
-        android:hint="@string/enter_username_text"
-        android:textSize="@dimen/login_input_text_size"
-        android:inputType="text"
-        android:autofillHints=""
-        android:importantForAutofill="no"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="@dimen/login_constraint_horizontal_bias"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/mat_blue"
+            android:minHeight="?attr/actionBarSize">
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+                <ImageView
+                    android:id="@+id/imageView2"
+                    android:layout_width="@dimen/tool_bar_image_layout_width"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:maxWidth="@dimen/tool_bar_image_min_max_width"
+                    android:minWidth="@dimen/tool_bar_image_min_max_width"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/ic_back_arrow"
+                    android:contentDescription="@string/back_button_in_main_activity" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="@dimen/tool_bar_title_margin_start"
+                    android:text="@string/main_activity_containing_2_fragments"
+                    android:textColor="@color/white"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/imageView2"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.appcompat.widget.Toolbar>
+    </com.google.android.material.appbar.AppBarLayout>
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/fragmentContainerView"
+        android:name="androidx.navigation.fragment.NavHostFragment"
+        android:layout_width="match_parent"
+        android:layout_height="675dp"
+        app:defaultNavHost="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/title_text_view" />
-    <EditText
-        android:id="@+id/password_edit_text"
-        android:layout_width="@dimen/login_input_width"
-        android:layout_height="@dimen/login_input_height"
-        android:layout_marginTop="@dimen/login_input_password_margin_top"
-        android:background="@drawable/text_edit_border"
-        android:hint="@string/enter_password_text"
-        android:paddingLeft="@dimen/login_input_padding"
-        android:paddingRight="@dimen/login_input_padding"
-        android:textColor="@color/general_tint"
-        android:textColorHint="@color/general_tint"
-        android:textSize="@dimen/login_input_text_size"
-        android:inputType="textPassword"
-        android:autofillHints=""
-        android:importantForAutofill="no"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="@dimen/login_constraint_horizontal_bias"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/username_edit_text" />
-    <Button
-        android:id="@+id/login_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="@dimen/login_login_button_margin_bottom"
-        android:width="@dimen/login_login_button_width"
-        android:height="@dimen/login_login_button_height"
-        android:background="@drawable/rounder_corner_rect"
-        android:text="@string/contBtn"
-        android:textColor="@color/white"
-        android:textSize="@dimen/login_login_button_text_size"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="@dimen/login_constraint_horizontal_bias"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/details_fragment_tool_bar"
+        app:navGraph="@navigation/main_nav_graph" />
 </androidx.constraintlayout.widget.ConstraintLayout>
