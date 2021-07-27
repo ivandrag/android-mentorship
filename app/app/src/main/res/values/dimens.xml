@@ -16,4 +16,15 @@
     <dimen name="fragment_image_height">321dp</dimen>
     <dimen name="fragment_image_margin_top">100dp</dimen>
     <dimen name="fragment_image_constraint_horizontal_bias">0.522</dimen>
+    <!--signup Fragment-->
+    <dimen name="signup_title_text_size">25sp</dimen>
+    <dimen name="signup_title_margin_top">76dp</dimen>
+    <dimen name="signup_text_edit_width">350dp</dimen>
+    <dimen name="signup_text_edit_height">60dp</dimen>
+    <dimen name="signup_text_edit_1_margin_top">42dp</dimen>
+    <dimen name="signup_text_edit_margin_top">23dp</dimen>
+    <dimen name="signup_text_edit_padding">15dp</dimen>
+    <dimen name="signup_submit_button_width">300dp</dimen>
+    <dimen name="signup_submit_button_height">50dp</dimen>
+    <dimen name="signup_submit_button_margin_bottom">0dp</dimen>
 </resources>

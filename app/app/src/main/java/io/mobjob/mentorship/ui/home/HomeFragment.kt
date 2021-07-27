@@ -1,22 +1,32 @@
 package io.mobjob.mentorship.ui.home
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
+import androidx.navigation.fragment.navArgs
 import io.mobjob.mentorship.R
 import io.mobjob.mentorship.databinding.FragmentHomeBinding
+import io.mobjob.mentorship.ui.MainActivityViewModel
 
 class HomeFragment : Fragment() {
 
     private var _binding: FragmentHomeBinding? = null
     private val binding get() = _binding!!
 
+    private val viewModel : MainActivityViewModel by activityViewModels()
+    private val args : HomeFragmentArgs by navArgs()
+
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         println("[SPCL_TAG] : " + "onCreateView")
+        viewModel.changeMainActivityTitle("Home")
+        viewModel.hideMainActivityBackButton(false)
+        viewModel.setToolBarVisible(true);
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
         return binding.root
     }
@@ -25,6 +35,14 @@ class HomeFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         goToFragmentDetails(Navigation.findNavController(view))
         println("[SPCL_TAG] : " + "onViewCreated")
+
+        Log.i("[SPCL_TAG] : ", "onViewCreated: Sent arguments : ")
+        Log.i("------------", "------------------------------------")
+        Log.i("[SPCL_TAG] : ", "fullName : " + args.fullName)
+        Log.i("[SPCL_TAG] : ", "email : " + args.email)
+        Log.i("[SPCL_TAG] : ", "email : " + args.fullAddress)
+        Log.i("[SPCL_TAG] : ", "email : " + args.userName)
+        Log.i("____________", "____________________________________")
     }
     private fun goToFragmentDetails(navController : NavController) {
         binding.gotoDetailsFragmentButton.setOnClickListener {
