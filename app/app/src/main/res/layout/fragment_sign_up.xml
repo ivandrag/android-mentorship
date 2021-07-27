@@ -5,7 +5,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.signup.SignUpFragment">
-
     <TextView
         android:id="@+id/singUpPageTitle"
         android:layout_width="wrap_content"
@@ -35,7 +34,8 @@
         android:maxLines="1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/singUpPageTitle" />
+        app:layout_constraintTop_toBottomOf="@+id/singUpPageTitle"
+        android:autofillHints="" />
     <EditText
         android:id="@+id/emailAddress"
         android:layout_width="@dimen/signup_text_edit_width"
@@ -49,7 +49,8 @@
         android:maxLines="1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/fullName" />
+        app:layout_constraintTop_toBottomOf="@+id/fullName"
+        android:autofillHints="" />
     <EditText
         android:id="@+id/fullAddress"
         android:layout_width="@dimen/signup_text_edit_width"
@@ -63,7 +64,8 @@
         android:maxLines="1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/emailAddress" />
+        app:layout_constraintTop_toBottomOf="@+id/emailAddress"
+        android:autofillHints="" />
     <EditText
         android:id="@+id/userName"
         android:layout_width="@dimen/signup_text_edit_width"
@@ -91,8 +93,9 @@
         android:maxLines="1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/userName" />
-
+        app:layout_constraintTop_toBottomOf="@+id/userName"
+        android:autofillHints=""
+        android:inputType="textPassword" />
     <Button
         android:id="@+id/signupSubmitButton"
         android:layout_width="@dimen/signup_submit_button_width"

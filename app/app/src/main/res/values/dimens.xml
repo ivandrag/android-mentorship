@@ -26,5 +26,5 @@
     <dimen name="signup_text_edit_padding">15dp</dimen>
     <dimen name="signup_submit_button_width">300dp</dimen>
     <dimen name="signup_submit_button_height">50dp</dimen>
-    <dimen name="signup_submit_button_margin_bottom">0dp</dimen>
+    <dimen name="signup_submit_button_margin_bottom">45dp</dimen>
 </resources>

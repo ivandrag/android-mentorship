@@ -33,7 +33,7 @@ class SignUpFragment : Fragment() {
                 Toast.makeText(context , "User Name field is empty", Toast.LENGTH_SHORT).show()
             }
             else if(binding.password.text.toString().isEmpty() || binding.password.text.toString().length < 7) {
-                Toast.makeText(context , "Password name field is incorrect", Toast.LENGTH_SHORT).show()
+                Toast.makeText(context , "Password field is incorrect", Toast.LENGTH_SHORT).show()
             } else {
                 Navigation.findNavController(view).navigate(SignUpFragmentDirections.actionSignUpFragmentToHomeFragment(
                     binding.fullName.text.toString(),

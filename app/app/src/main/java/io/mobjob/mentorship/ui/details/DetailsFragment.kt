@@ -8,7 +8,6 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
-import io.mobjob.mentorship.R
 import io.mobjob.mentorship.databinding.FragmentDetailsBinding
 import io.mobjob.mentorship.ui.MainActivityViewModel
 
@@ -32,7 +31,9 @@ class DetailsFragment : Fragment() {
 
     private fun goToHomeFragment(navController : NavController) {
         binding.gotoHomeFragmentButton.setOnClickListener {
-            navController.navigate(R.id.action_detailsFragment_to_homeFragment)
+            //navController.navigate(R.id.action_detailsFragment_to_homeFragment)
+            //activity?.supportFragmentManager?.popBackStack()
+            requireActivity().onBackPressed()
         }
     }
 
