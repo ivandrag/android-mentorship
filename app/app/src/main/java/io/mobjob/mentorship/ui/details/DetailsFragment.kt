@@ -31,8 +31,6 @@ class DetailsFragment : Fragment() {
 
     private fun goToHomeFragment(navController : NavController) {
         binding.gotoHomeFragmentButton.setOnClickListener {
-            //navController.navigate(R.id.action_detailsFragment_to_homeFragment)
-            //activity?.supportFragmentManager?.popBackStack()
             requireActivity().onBackPressed()
         }
     }

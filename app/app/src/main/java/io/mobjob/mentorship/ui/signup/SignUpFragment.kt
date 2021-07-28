@@ -12,7 +12,6 @@ import io.mobjob.mentorship.databinding.FragmentSignUpBinding
 class SignUpFragment : Fragment() {
     private var _binding: FragmentSignUpBinding ? = null
     private val binding get() = _binding!!
-    //private val viewModel : MainActivityViewModel by activityViewModels()
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         _binding = FragmentSignUpBinding.inflate(inflater, container, false)

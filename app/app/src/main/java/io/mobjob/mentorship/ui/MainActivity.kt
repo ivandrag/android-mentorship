@@ -30,7 +30,6 @@ class MainActivity : AppCompatActivity() {
         })
 
         binding.backButton.setOnClickListener{
-            //this.supportFragmentManager.popBackStack()
             onBackPressed()
         }
     }
