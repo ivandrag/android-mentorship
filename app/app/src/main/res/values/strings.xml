@@ -13,9 +13,18 @@
     <string name="goto_detail_fragment_string">Go to <b>Details</b> fragment</string>
     <string name="goto_home_fragment_string">Go to <b>Home</b> fragment</string>
     <string name="goto_new_activity">Go to new activity</string>
-    <string name="main_activity_containing_2_fragments">Main Activity containing 2 <b>fragments</b></string>
     <string name="an_image_describing_the_page">An image describing the page</string>
     <string name="details_page">Details Fragment</string>
     <string name="home_page">Home Fragment</string>
     <string name="back_button_in_main_activity">back button in main activity</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <!--Signup fragment-->
+    <string name="signup_fragment_title_text">Android Mentorship \n program</string>
+    <string name="signup_submit_button">Sign Up</string>
+    <string name="signup_password">Password</string>
+    <string name="signup_username">Username</string>
+    <string name="signup_full_address">Full Address</string>
+    <string name="signup_full_name">Full Name</string>
+    <string name="signup_email_address">Email Address</string>
 </resources>

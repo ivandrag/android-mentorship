@@ -3,7 +3,16 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main_nav_graph"
-    app:startDestination="@id/homeFragment">
+    app:startDestination="@id/signUpFragment">
+    <fragment
+        android:id="@+id/signUpFragment"
+        android:name="io.mobjob.mentorship.ui.signup.SignUpFragment"
+        android:label="fragment_sign_up"
+        tools:layout="@layout/fragment_sign_up" >
+        <action
+            android:id="@+id/action_signUpFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
     <fragment
         android:id="@+id/homeFragment"
         android:name="io.mobjob.mentorship.ui.home.HomeFragment"
@@ -11,6 +20,18 @@
         <action
             android:id="@+id/action_homeFragment_to_detailsFragment"
             app:destination="@id/detailsFragment" />
+        <argument
+            android:name="fullName"
+            app:argType="string" />
+        <argument
+            android:name="email"
+            app:argType="string" />
+        <argument
+            android:name="fullAddress"
+            app:argType="string" />
+        <argument
+            android:name="userName"
+            app:argType="string" />
     </fragment>
     <fragment
         android:id="@+id/detailsFragment"
