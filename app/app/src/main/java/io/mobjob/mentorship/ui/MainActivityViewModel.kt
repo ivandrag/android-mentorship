@@ -5,22 +5,35 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
 class MainActivityViewModel : ViewModel() {
-    private val mutableMainActivityTitle = MutableLiveData<String>()
-    private val mutableMainActivityBackbutton = MutableLiveData<Boolean>()
-    private val mutableMainActivityToolBar= MutableLiveData<Boolean>()
-    val mainActivityTitle : LiveData<String> get() = mutableMainActivityTitle
-    val mainActivityToolBar : LiveData<Boolean> get() = mutableMainActivityBackbutton
-    val mainActivityIn : LiveData<Boolean> get() = mutableMainActivityToolBar
+    private val _onEvent = MutableLiveData<OnEvent>()
 
-    fun changeMainActivityTitle(title : String) {
-        mutableMainActivityTitle.value = title
+    val onEvent: LiveData<OnEvent> get() = _onEvent
+
+    fun changeMainActivityTitle(title: String) {
+        _onEvent.value = OnEvent.SetToolbarTitle(title)
     }
 
-    fun hideMainActivityBackButton(value : Boolean) {
-        mutableMainActivityBackbutton.value = value
+    fun hideMainActivityBackButton(isVisible: Boolean) {
+        if (isVisible) {
+            _onEvent.value = OnEvent.ShowToolbarBackButton
+            return
+        }
+        _onEvent.value = OnEvent.HideToolbarBackButton
     }
 
-    fun setToolBarVisible(value : Boolean) {
-        mutableMainActivityToolBar.value = value
+    fun setToolBarVisible(isVisible: Boolean) {
+        if (isVisible) {
+            _onEvent.value = OnEvent.ShowToolbar
+            return
+        }
+        _onEvent.value = OnEvent.HideToolbar
+    }
+
+    sealed class OnEvent {
+        data class SetToolbarTitle(val title: String) : OnEvent()
+        object ShowToolbar : OnEvent()
+        object HideToolbar : OnEvent()
+        object HideToolbarBackButton : OnEvent()
+        object ShowToolbarBackButton : OnEvent()
     }
 }
