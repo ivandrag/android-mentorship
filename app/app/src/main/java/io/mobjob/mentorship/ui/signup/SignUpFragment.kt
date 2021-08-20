@@ -1,38 +1,43 @@
 package io.mobjob.mentorship.ui.signup
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.fragment.app.viewModels
+import androidx.navigation.NavController
 import androidx.navigation.Navigation
+import io.mobjob.mentorship.R
 import io.mobjob.mentorship.databinding.FragmentSignUpBinding
+import io.mobjob.mentorship.ui.BaseFragment
 
-class SignUpFragment : Fragment() {
-    private var _binding: FragmentSignUpBinding ? = null
-    private val binding get() = _binding!!
+class SignUpFragment : BaseFragment<FragmentSignUpBinding>() {
+    private val viewModel: SignUpViewModel by viewModels()
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        _binding = FragmentSignUpBinding.inflate(inflater, container, false)
+    override fun bindingInit(
+        inflate: LayoutInflater,
+        container: ViewGroup?,
+        attachToParent: Boolean
+    ): ConstraintLayout? {
+        this._binding =  FragmentSignUpBinding.inflate(inflate, container, false)
         return binding.root
     }
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        val errorMessages = resources.getStringArray(R.array.signup_error_messages)
         binding.signupSubmitButton.setOnClickListener {
-            if(binding.fullName.text.toString().isEmpty()) {
-                Toast.makeText(context , "Full name field is empty", Toast.LENGTH_SHORT).show()
-            }
-            else if(binding.emailAddress.text.toString().isEmpty()) {
-                Toast.makeText(context , "Email Address field is empty", Toast.LENGTH_SHORT).show()
-            }
-            else if(binding.userName.text.toString().isEmpty()) {
-                Toast.makeText(context , "User Name field is empty", Toast.LENGTH_SHORT).show()
-            }
-            else if(binding.password.text.toString().isEmpty() || binding.password.text.toString().length < 7) {
-                Toast.makeText(context , "Password field is incorrect", Toast.LENGTH_SHORT).show()
+
+            val toastMsg = viewModel.checkTextEditValue(
+                binding.fullName.text.toString(),
+                binding.emailAddress.text.toString(),
+                binding.userName.text.toString(),
+                binding.password.text.toString());
+
+            if (toastMsg != null) {
+                Toast.makeText(context , errorMessages[toastMsg], Toast.LENGTH_SHORT).show()
             } else {
                 Navigation.findNavController(view).navigate(SignUpFragmentDirections.actionSignUpFragmentToHomeFragment(
                     binding.fullName.text.toString(),
@@ -43,4 +48,5 @@ class SignUpFragment : Fragment() {
             }
         }
     }
+    override fun goToFragment(navController: NavController) {}
 }

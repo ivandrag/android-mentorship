@@ -6,7 +6,6 @@ import androidx.lifecycle.ViewModel
 
 class MainActivityViewModel : ViewModel() {
     private val _onEvent = MutableLiveData<OnEvent>()
-
     val onEvent: LiveData<OnEvent> get() = _onEvent
 
     fun changeMainActivityTitle(title: String) {

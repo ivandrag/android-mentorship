@@ -27,4 +27,11 @@
     <string name="signup_full_address">Full Address</string>
     <string name="signup_full_name">Full Name</string>
     <string name="signup_email_address">Email Address</string>
+    <!-- SignUpViewModel error strings-->
+    <string-array name="signup_error_messages">
+        <item>Full name field is empty</item>
+        <item>Email Address field is empty</item>
+        <item>User Name field is empty</item>
+        <item>Password field is incorrect</item>
+    </string-array>
 </resources>
